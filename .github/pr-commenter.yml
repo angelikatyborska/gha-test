@@ -8,7 +8,6 @@ comment:
   snippets:
     - id: test_snippet_1
       files:
-        - 'banana/2.txt'
         - 'banana/3.txt'
         - 'banana/4.txt'
       body: "\
