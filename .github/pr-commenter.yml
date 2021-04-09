@@ -1,9 +1,9 @@
 comment:
   header: Hi, there.
-  footer: "\
-    ---\n\n
+  footer: |
+    ---
+
     > This is an automated comment created by [foo/bar].
-    "
 
   snippets:
     - id: test_snippet_1
@@ -11,19 +11,17 @@ comment:
         - 'banana/2.txt'
         - 'banana/3.txt'
         - 'banana/4.txt'
-      body: "\
+      body: |
         This is a list for bananas 2 and 3:
         - one
         - two
         - three :rocket:
-        "
 
     - id: test_snippet_2
       files:
         - 'banana/1.txt'
-      body: "\
+      body: |
         This is a list for banana 1
-        "
 
     - id: test_snippet_3
       files:
