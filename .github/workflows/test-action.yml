@@ -1,7 +1,7 @@
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: angelikatyborska/pr-commenter-action@23b392fdd68608f4e252645ea925e60ce0d98637
+      - uses: angelikatyborska/pr-commenter-action@0d8317558f7df100aed2f20285806013ecd87d28
