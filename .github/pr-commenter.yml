@@ -1,0 +1,31 @@
+comment:
+  header: Hi, there.
+  footer: "\
+    ---\n\n
+    > This is an automated comment created by [foo/bar].
+    "
+
+  snippets:
+    - id: test_snippet_1
+      files:
+        - 'banana/2.txt'
+        - 'banana/3.txt'
+        - 'banana/4.txt'
+      body: "\
+        This is a list for bananas 2 and 3:
+        - one
+        - two
+        - three :rocket:
+        "
+
+    - id: test_snippet_2
+      files:
+        - 'banana/1.txt'
+      body: "\
+        This is a list for banana 1
+        "
+
+    - id: test_snippet_3
+      files:
+        - 'cherry/**/*'
+      body: this is a list for any cherry file

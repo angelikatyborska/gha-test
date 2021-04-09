@@ -4,4 +4,4 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: angelikatyborska/pr-commenter-action@2fc7da5168b5fab7684670303c52901d3b60839e
+      - uses: angelikatyborska/pr-commenter-action@23b392fdd68608f4e252645ea925e60ce0d98637
