@@ -1,18 +1,7 @@
-on: [pull_request]
+on: [pull_request, push]
 
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            console.log(context)
-
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Test comment 🐄'
-            })
+      - uses: angelikatyborska/pr-commenter-action@2fc7da5168b5fab7684670303c52901d3b60839e
