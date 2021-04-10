@@ -1,4 +1,5 @@
 comment:
+  on-update: recreate
   header: Hi, there.
   footer: |
     ---
