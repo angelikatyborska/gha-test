@@ -1,5 +1,5 @@
 comment:
-  on-update: edit
+  on-update: nothing
   header: Hi, there.
   footer: |
     ---
