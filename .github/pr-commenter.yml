@@ -26,6 +26,6 @@ comment:
 
     - id: test_snippet_3
       files:
-        - any: ['cherry/**/*', 'cherry/**/*.txt']
+        - any: ['cherry/**/*', '**/*.txt']
           all: ['!cherry/1.txt']
       body: this is a list for any cherry txt file but cherry/1.txt
