@@ -1,5 +1,7 @@
 comment:
   on-update: recreate
+  glob-options:
+    nocase: true
   header: Hi, there.
   footer: |
     ---
