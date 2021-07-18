@@ -18,7 +18,7 @@ comment:
         This is a list for bananas 2 and 3:
         - one
         - two, PR author: {{ prAuthor }}, PR branch name: {{ prBranchName }}{{^prBranchNameStartsWithRequiredPrefix}}
-        - your branch name doesn't start with the required prefix 'ref-'{{/prBranchNameStartsWithRequiredPrefix}}
+        - your branch name doesn't start with the required prefix 'test-'{{/prBranchNameStartsWithRequiredPrefix}}
         - three :rocket:
         - today is {{ today }}
 
