@@ -4,4 +4,9 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: angelikatyborska/pr-commenter-action@95e09718e8e344e2798ca0063dd9ce6aee82483e
+      - uses: angelikatyborska/pr-commenter-action@76bcbafd269c4990f79dfef8d4e5253932636a74
+        with:
+          template-variables: |
+            {
+              "name": "Angelika"
+            }
