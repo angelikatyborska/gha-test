@@ -19,6 +19,7 @@ comment:
         - one
         - two, PR author: {{ prAuthor }}, PR branch name: {{ prBranchName }}
         - three :rocket:
+        - today is {{ today }}
 
     - id: test_snippet_2
       files:

@@ -10,11 +10,15 @@ jobs:
       - run: echo ${{ github.event.pull_request }}
       - run: echo ${{ github.event.pull_request.user }}
       - run: echo ${{ github.event.pull_request.user.login }}
-      - run: echo ${{ encodeURIComponent(github.event.pull_request.user.login) }}
+      - name: Set some template variables
+        id: vars
+        run: |
+          echo ::set-output name=today::"$(date +%d-%m-%Y)"
       - uses: angelikatyborska/pr-commenter-action@76bcbafd269c4990f79dfef8d4e5253932636a74
         with:
           template-variables: |
             {
+              "today": "${{ steps.vars.outputs.today }}",
               "prAuthor": "${{ github.event.pull_request.user.login }}",
               "prBranchName": "${{ github.event.pull_request.head.ref }}"
             }
