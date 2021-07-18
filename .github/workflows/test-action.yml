@@ -20,5 +20,5 @@ jobs:
             {
               "today": "${{ steps.vars.outputs.today }}",
               "prAuthor": "${{ github.event.pull_request.user.login }}",
-              "prBranchNameStartsWithPrefix": ${{ startsWith(github.event.pull_request.head.ref, 'test-') }}
+              "prBranchNameStartsWithRequiredPrefix": ${{ startsWith(github.event.pull_request.head.ref, 'ref-') }}
             }
