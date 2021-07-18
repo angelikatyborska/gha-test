@@ -4,9 +4,15 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ github.sha }}
+      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.event }}
+      - run: echo ${{ github.event.pull_request }}
+      - run: echo ${{ github.event.pull_request.user }}
+      - run: echo ${{ github.event.pull_request.user.login }}
       - uses: angelikatyborska/pr-commenter-action@76bcbafd269c4990f79dfef8d4e5253932636a74
         with:
           template-variables: |
             {
-              "pr_author": "${{ github.payload.pull_request.user.login }}"
+              "pr_author": "${{ github.event.pull_request.user.login }}"
             }
