@@ -8,5 +8,5 @@ jobs:
         with:
           template-variables: |
             {
-              "name": "Angelika"
+              "pr_author": "${{ github.payload.pull_request.user.login }}"
             }
