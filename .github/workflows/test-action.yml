@@ -4,11 +4,11 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.ref }}"
+      - run: echo "${{ github.head_ref }}"
       - run: echo "contains"
-        if: contains( github.ref, 'test-branch' )
+        if: contains( github.head_ref, 'test-branch' )
       - run: echo "contains 2"
-        if: ${{ contains(github.ref, 'test-branch') }}
+        if: ${{ contains(github.head_ref, 'test-branch') }}
       - run: echo ${{ github.sha }}
       - run: echo ${{ github.event_name }}
       - run: echo ${{ github.event }}
