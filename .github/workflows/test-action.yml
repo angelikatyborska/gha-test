@@ -6,9 +6,9 @@ jobs:
     steps:
       - run: echo "${{ github.head_ref }}"
       - run: echo "contains"
-        if: contains( github.head_ref, 'test-branch' )
+        if: contains( github.head_ref, 'test-branch2' )
       - run: echo "contains 2"
-        if: ${{ contains(github.head_ref, 'test-branch') }}
+        if: ${{ contains(github.head_ref, 'test-branch2') }}
       - run: echo ${{ github.sha }}
       - run: echo ${{ github.event_name }}
       - run: echo ${{ github.event }}
