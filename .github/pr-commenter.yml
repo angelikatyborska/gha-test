@@ -9,7 +9,7 @@ comment:
     > This is an automated comment created by [foo/bar].
 
   snippets:
-    - id: test_snippet_1
+    - id: test_snippet_1_{{ bananaHash }}
       files:
         - 'banana/2.txt'
         - 'banana/3.txt'

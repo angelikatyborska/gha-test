@@ -33,6 +33,7 @@ jobs:
             {
               "today": "${{ steps.vars.outputs.today }}",
               "banana": ${{ toJSON(env.MULTILINE_BANANA) }},
+              "bananaHash": ${{ hashFiles('banana/2.txt') }},
               "prAuthor": "${{ github.event.pull_request.user.login }}",
               "prBranchNameStartsWithRequiredPrefix": ${{ startsWith(github.event.pull_request.head.ref, 'test-') }}
             }
