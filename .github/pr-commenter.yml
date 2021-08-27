@@ -21,6 +21,7 @@ comment:
         - your branch name doesn't start with the required prefix 'test-'{{/prBranchNameStartsWithRequiredPrefix}}
         - three :rocket:
         - today is {{ today }}
+        - banana is {{ banana }}
 
     - id: test_snippet_2
       files:

@@ -4,6 +4,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2.3.4
       - run: echo "${{ github.head_ref }}"
       - run: echo "contains"
         if: contains( github.head_ref, 'test-branch2' )
@@ -19,11 +20,19 @@ jobs:
         id: vars
         run: |
           echo ::set-output name=today::"$(date +%d-%m-%Y)"
+      - name: set env vars
+        run: |
+          MULTILINE_BANANA=$(cat banana/2.txt)
+          echo "MULTILINE_BANANA<<EOF" >> $GITHUB_ENV
+          echo "$MULTILINE_BANANA" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
       - uses: angelikatyborska/pr-commenter-action@76bcbafd269c4990f79dfef8d4e5253932636a74
         with:
           template-variables: |
             {
               "today": "${{ steps.vars.outputs.today }}",
+              "banana": ${{ toJSON(env.MULTILINE_BANANA) }},
               "prAuthor": "${{ github.event.pull_request.user.login }}",
               "prBranchNameStartsWithRequiredPrefix": ${{ startsWith(github.event.pull_request.head.ref, 'test-') }}
             }
