@@ -1,0 +1,36 @@
+comment:
+  on-update: recreate
+  glob-options:
+    nocase: true
+  header: Hi, there.
+  footer: |
+    ---
+
+    > This is an automated comment created by [foo/bar].
+
+  snippets:
+    - id: test_snippet_1_{{ bananaHash }}
+      files:
+        - 'banana/2.txt'
+        - 'banana/3.txt'
+        - 'banana/4.txt'
+      body: |
+        This is a list for bananas 2 and 3:
+        - one
+        - two, PR author: {{ prAuthor }}, PR branch name: {{ prBranchName }}{{^prBranchNameStartsWithRequiredPrefix}}
+        - your branch name doesn't start with the required prefix 'test-'{{/prBranchNameStartsWithRequiredPrefix}}
+        - three :rocket:
+        - today is {{ today }}
+        - banana is {{ banana }}
+
+    - id: test_snippet_2
+      files:
+        - 'banana/1.txt'
+      body: |
+        This is a list for banana 1
+
+    - id: test_snippet_3
+      files:
+        - any: ['cherry/**/*', '**/*.txt']
+          all: ['!cherry/1.txt']
+      body: this is a list for any cherry txt file but cherry/1.txt
