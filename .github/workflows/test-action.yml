@@ -27,13 +27,13 @@ jobs:
           echo "$MULTILINE_BANANA" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - uses: angelikatyborska/pr-commenter-action@76bcbafd269c4990f79dfef8d4e5253932636a74
+      - uses: angelikatyborska/pr-commenter-action@4fe688f0c96c12366e63c71108627c98db282c3f
         with:
           template-variables: |
             {
               "today": "${{ steps.vars.outputs.today }}",
               "banana": ${{ toJSON(env.MULTILINE_BANANA) }},
-              "bananaHash": ${{ hashFiles('banana/2.txt') }},
+              "bananaHash": "${{ hashFiles('banana/2.txt') }}",
               "prAuthor": "${{ github.event.pull_request.user.login }}",
               "prBranchNameStartsWithRequiredPrefix": ${{ startsWith(github.event.pull_request.head.ref, 'test-') }}
             }
