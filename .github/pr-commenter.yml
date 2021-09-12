@@ -66,7 +66,7 @@ comment:
         does not break, before merging these changes
     - id: ignored-dist
       files:
-        - dist
+        - /dist/*
       body: >
         Please do not commit the built application to git. The contents of the dist
         directory will be generated after the app is compiled
