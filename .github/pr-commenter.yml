@@ -6,6 +6,10 @@ comment:
     ---
     > I'm a bot, and this is an automated comment 🤖
   snippets:
+    - - id: empty-body-test-{{ prAuthor }}
+        files:
+          - *
+        body: "{{ prAuthor }}"
     - id: vue-config
       files:
         - vue.config.js
